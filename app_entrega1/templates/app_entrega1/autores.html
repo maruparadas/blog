@@ -1,0 +1,46 @@
+  
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Autores</title>
+    </head>
+    <style>
+        body {
+            background-color:whitesmoke;}
+            table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 2px solid blue;
+}
+thead th {
+  width: 10%;
+}
+    </style>
+        <body>
+            <h1>Autores</h1>
+
+            <!-- Lista de autores -->
+            <div class="container mt-5">
+                <table class="table" center>
+                    <thead >
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>                
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {% for aut in autores %}
+                            <tr>
+                            <td>{{aut.nombre}}</td>
+                            <td>{{aut.apellido}}</td>
+                            </tr> 
+                            {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </body>
+    </html>

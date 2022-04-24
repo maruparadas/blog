@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+</head>
+<body>
+    <h1>Formulario para editar perfil</h1>
+
+    <div class="profileContainer">
+        <div class="profileInfo">
+            <h4>Usuario: {{user.username}}</h4>
+            <h4>Email: {{user.email}}</h4>
+            {% if user.first_name and user.last_name %}
+                <h4>Nombre Completo: {{user.first_name}} {{user.last_name}}</h4>
+            {% endif %}
+            <h4>Editar <a href="{% url 'Avatar'%}">avatar</a></h4>
+        </div>
+
+    <form method="post">
+        
+        {% csrf_token %}
+
+            {{ miFormulario.as_p}}
+
+        <button class="btn btn-primary m-2" type="submit">Confirmar</button>
+
+        {% if edit_success %}
+        <h4 style="font-style: italic; color: green;">La modificación fue realizada de forma exitosa!!!</h4>
+        {% endif %}
+        
+    </form>
+
+</body>
+</html>

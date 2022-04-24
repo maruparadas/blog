@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros_Lista</title>
+</head>
+<body>
+    <h1>Libros</h1>
+
+    <ul>
+
+        {% for libro in object_list %}
+
+            <li>
+                <p>Titulo: {{libro.titulo}}</p>
+                <p>
+                    <a href="{% url 'Detalle' libro.isbn%}">Detalle</a>
+                    <a href="{% url 'Editar' libro.isbn%}">Editar</a>
+                    <a href="{% url 'Eliminar' libro.isbn%}">Eliminar</a>
+                </p>
+            </li>
+
+        {% endfor %}
+
+    </ul>
+
+    <a href="{% url 'Inicio' %}">Regresar</a>
+
+</body>
+</html>

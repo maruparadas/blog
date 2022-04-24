@@ -1,0 +1,11 @@
+
+{% block main %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{user_avatar_form.as_p}}
+        <button class="btn btn-primary m-2" type="submit">Confirmar</button>
+        {% if edit_success %}
+            <h4 style="font-style: italic; color: green;">Avatar uploaded</h4>
+        {% endif %}
+    </form>
+{% endblock %}
